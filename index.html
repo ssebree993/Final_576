@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Geog 576 Fall 2024 Sebree</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* https://fonts.google.com/?query=western&categoryFilters=Serif:%2FSerif%2FHumanist+Venetian;Seasonal:%2FSeasonal%2FChristmas
+      */
+      h3 {color:rgb(9, 148, 241);}
+      p {color:rgb(152, 89, 11);}
+      popup-background {color:rgba(0, 238, 255, 0.484);}
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoibWpvbmVzNjU4NzQiLCJhIjoiY200YmVrcTl1MDJ2eTJscHV5bWs5YmR0MyJ9.8InTWUiZGmgDMW6zNMwjBQ';
+      const map = new mapboxgl.Map({
+        container: 'map',
+        //style: 'mapbox://styles/examples/clg45vm7400c501pfubolb0xz',
+        style: 'mapbox://styles/mjones65874/cm4g7rgg2000v01qpcop7bajj',
+        center: [-100.472717, 29.610862],  //-100.472717, 29.610862
+        zoom: 4.7
+      });
+
+      map.on('click', (event) => {
+        const features = map.queryRenderedFeatures(event.point, {
+          layers: ['t4']
+        });
+        if (!features.length) {
+          return;
+        }
+        const feature = features[0];
+
+        const popup = new mapboxgl.Popup({ offset: [0, -15] })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML(
+            `<h3>Specialty: ${feature.properties.Specialty}</h3>
+            <p>${feature.properties.Name}<br>${feature.properties.Address }<br>${feature.properties.City}, ${feature.properties.State}</p>
+            
+              </b> <p><a href="${feature.properties.Hyperlink}">Details</a> </p>`
+          )
+          .addTo(map);
+      });
+    </script>
+  </body>
+</html>
