@@ -1,5 +1,6 @@
 # 2024 T4 Top Texas Taco Locations, Rated by Texas Monthly Magazine
 [Find Specialty Tacos](https://ssebree993.github.io/Final_576) 
+![T4 Taco Locator](https://github.com/user-attachments/assets/106036fe-8c17-43bd-8d10-a13e098fb531)
 
 ## Introduction
 People traveling in Texas and throughout the United States may be missing out on a specially crafted, top ranked taco experience in several areas of Texas.
