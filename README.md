@@ -3,7 +3,7 @@
 ![T4 Taco Locator](https://github.com/user-attachments/assets/106036fe-8c17-43bd-8d10-a13e098fb531)
 
 ## Introduction
-People traveling in Texas and throughout the United States may be missing out on a specially crafted, top ranked taco experience in several areas of Texas.
+People traveling in Texas and throughout the United States may be missing out on many specially crafted, top ranked taco experiences in Texas.
 
 ## Features
 Interactive webmap with a specialty taco layer
