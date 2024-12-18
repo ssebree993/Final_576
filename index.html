@@ -9,6 +9,8 @@
       href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
       rel="stylesheet"
     />
+    <!--<meta http-equiv="Access-Control-Allow-Origin" content="http://127.0.0.1:5500" /> Added CORS Extension-->
+    <link rel="icon" href="images/icons8-taco-16.png" type="image/x-icon" />
     <style>
       /* https://fonts.google.com/?query=western&categoryFilters=Serif:%2FSerif%2FHumanist+Venetian;Seasonal:%2FSeasonal%2FChristmas
       */
@@ -31,8 +33,9 @@
   <body>
     <div id="map"></div>
     <script>
-      mapboxgl.accessToken = 'pk.eyJ1IjoibWpvbmVzNjU4NzQiLCJhIjoiY200YmVrcTl1MDJ2eTJscHV5bWs5YmR0MyJ9.8InTWUiZGmgDMW6zNMwjBQ';
-      const map = new mapboxgl.Map({
+      mapboxgl.accessToken = "API_KEY";
+
+       const map = new mapboxgl.Map({
         container: 'map',
         //style: 'mapbox://styles/examples/clg45vm7400c501pfubolb0xz',
         style: 'mapbox://styles/mjones65874/cm4g7rgg2000v01qpcop7bajj',
